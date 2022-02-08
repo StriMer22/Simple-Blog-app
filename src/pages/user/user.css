@@ -1,0 +1,81 @@
+.user {
+  display: flex;
+}
+
+.userWrapper {
+  flex: 9;
+  padding: 20px;
+}
+
+.userTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userUpdateTitle {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: lightcoral;
+}
+.userDeleteTitle {
+  color: red;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.userForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.userProfilePicture {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.userProfilePicture > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.userProfilePicture svg {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.userForm > label {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.userForm > input {
+  color: gray;
+  margin: 10px 0;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid lightcoral;
+}
+
+.userSubmit {
+  width: 150px;
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+  background-color: teal;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
