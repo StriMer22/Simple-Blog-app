@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./user.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { BiUserCircle } from "react-icons/bi";
 import { Context } from "../../context/Context";
 import axios from "axios";
 import defaultUser from "../../assets/defaultUser.png";
@@ -68,20 +67,19 @@ export default function User() {
           </span>
         </div>
         <form className="userForm" onSubmit={handleSubmit}>
-          <label>Profile Picture</label>
+          <label>Edit Profile Picture</label>
           <div className="userProfilePicture">
-            <img
-              src={
-                file
-                  ? URL.createObjectURL(file)
-                  : user.profilePic === ""
-                  ? defaultUser
-                  : publicFolder + user.profilePic
-              }
-              alt="react"
-            />
-            <label htmlFor="fileInput">
-              <BiUserCircle />
+            <label htmlFor="fileInput" className="userProfilePicture">
+              <img
+                src={
+                  file
+                    ? URL.createObjectURL(file)
+                    : user.profilePic === ""
+                    ? defaultUser
+                    : publicFolder + user.profilePic
+                }
+                alt="react"
+              />
             </label>
             <input
               type="file"
@@ -90,19 +88,19 @@ export default function User() {
               onChange={(event) => setFile(event.target.files[0])}
             />
           </div>
-          <label>Username</label>
+          <label>Edit Username</label>
           <input
             type="text"
             placeholder={user.username}
             onChange={(event) => setUsername(event.target.value)}
           />
-          <label>Email</label>
+          <label>Edit Email</label>
           <input
             type="email"
             placeholder={user.email}
             onChange={(event) => setEmail(event.target.value)}
           />
-          <label>Password</label>
+          <label>Edit Password</label>
           <input
             type="password"
             onChange={(event) => setPassword(event.target.value)}

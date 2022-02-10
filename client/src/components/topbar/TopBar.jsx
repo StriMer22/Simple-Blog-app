@@ -29,7 +29,7 @@ export default function TopBar() {
           <li className="topListItem">
             <a
               className="link"
-              href="https://www.linkedin.com/in/dmytro-boiko-90b3511b4/"
+              href="https://github.com/StriMer22/Simple-Blog-app"
               target="_blank"
               rel="noreferrer"
             >
