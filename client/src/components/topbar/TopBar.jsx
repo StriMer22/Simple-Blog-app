@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./topBar.css";
-import PostImg from "../../assets/posts.jpg";
+import { Context } from "../../context/Context";
+import defaultUser from "../../assets/defaultUser.png";
 
 export default function TopBar() {
-  const user = false;
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
+  const publicFolder = "http://localhost:3001/pictures/";
+
   return (
     <div className="top">
       <div className="topLeft">
@@ -19,26 +27,48 @@ export default function TopBar() {
       <div className="topCenter">
         <ul className="topList">
           <li className="topListItem">
-            <Link className="link" to="/">
+            <a
+              className="link"
+              href="https://www.linkedin.com/in/dmytro-boiko-90b3511b4/"
+              target="_blank"
+              rel="noreferrer"
+            >
               ABOUT
-            </Link>
+            </a>
           </li>
           <li className="topListItem">
-            <Link className="link" to="/">
+            <a
+              className="link"
+              href="https://www.linkedin.com/in/dmytro-boiko-90b3511b4/"
+              target="_blank"
+              rel="noreferrer"
+            >
               CONTACT
-            </Link>
+            </a>
           </li>
           <li className="topListItem">
             <Link className="link" to="/write">
               WRITE
             </Link>
           </li>
-          <li className="topListItem">{user && "LOGOUT"}</li>
+          <li className="topListItem" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <img className="topImg" src={PostImg} alt="dog"></img>
+          <Link to="/user" className="link">
+            <img
+              className="topImg"
+              src={
+                user.profilePic === ""
+                  ? defaultUser
+                  : publicFolder + user.profilePic
+              }
+              alt="Profile"
+            ></img>
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">

@@ -2,17 +2,12 @@ import React from "react";
 import "./posts.css";
 import Post from "../post/Post";
 
-function Posts() {
+export default function Posts({ posts }) {
   return (
     <div className="posts">
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((p, keys) => {
+        return <Post key={keys} post={p} />;
+      })}
     </div>
   );
 }
-
-export default Posts;
